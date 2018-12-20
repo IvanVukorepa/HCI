@@ -1,0 +1,11 @@
+.details{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.imageDetails {
+    margin: 80px 30px 0 50px;;
+    width: 300px;
+    height: 400px;
+    background-color: green;
+}
