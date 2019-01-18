@@ -1,11 +1,82 @@
 .details{
-    height: 100%;
-    width: 100%;
     display: flex;
+    background-color: rgb(245, 245, 245);
+    margin-left: 20px;
 }
+
+.detailsSite {
+    min-height: 100vh;
+    background-color: rgb(245, 245, 245);
+}
+
 .imageDetails {
     margin: 80px 30px 0 50px;;
-    width: 300px;
-    height: 400px;
-    background-color: green;
+    width: 200px;
+    height: 300px;
 }
+
+.detailsImage{
+    background-color: red;
+    height: 100%;
+    width: 100%;
+}
+
+.bookDetails {
+    display: flex;
+}
+
+.detailsAbout {
+    margin: 80px 15px auto 60px;
+    width: 50%;
+}
+.detailsAboutTitle {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.detailsAboutAuthor {
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.detailsAboutDescription {
+    margin-top: 30px;
+}
+
+.detailsCheckout {
+    margin: 80px auto auto 60px;
+    padding-right: 15px;
+}
+
+.imageImg {
+    height: 300px;
+    width: 200px;
+}
+
+.detailsCheckoutPrice {
+    margin-top: 60px;
+    margin-left: 15px;
+    font-size: 26px;
+}
+
+.detailsCheckoutButton {
+    margin-top: 20px;
+    display: block;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 12em;
+    height: 3em;
+    background: rgb(255, 255, 0);
+    line-height: 3;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.detailsCheckoutButton:hover {
+    background: rgb(230,230,0);
+    cursor: pointer;
+}
+

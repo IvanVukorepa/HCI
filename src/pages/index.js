@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Categories from "../components/categories.js"
 import Items from "../components/items.js"
 import Layout from "../components/layout.js"
@@ -7,12 +6,57 @@ import Layout from "../components/layout.js"
 import "../style/index.css"
 import "../style/cssReset.css"
 
+
+var jsonData = require('../books.json');
+
+class Index extends React.Component {
+  constructor(props){
+    super(props);
+    this.filterBooks = this.filterBooks.bind(this);
+    this.state= {
+      allBooks: jsonData
+    }
+  }
+
+  filterBooks = (filterString) =>{
+    let allBooks = jsonData; 
+    if(filterString !== ""){   
+      let filteredBooks = allBooks.filter(el => {
+        return el.title.toLowerCase().includes(filterString.toLowerCase()) === true;
+      });
+      this.setState({
+        allBooks: filteredBooks
+      });
+    }
+    else{
+      this.setState({
+        allBooks: allBooks
+      });
+    }
+  }
+
+  render() {
+    return(
+      <div> 
+      <Layout filterBooks={this.filterBooks} />
+      <div className = "site">
+          <Categories />
+          <Items books={this.state.allBooks}/>
+      </div>
+    </div>
+    );
+  }
+}
+
+export default Index;
+
+/*
 export default () => (
   <div> 
     <Layout />
     <div className = "site">
         <Categories />
-        <Items />
+        <Items books={jsonData}/>
     </div>
   </div>
-)         
+)         */
