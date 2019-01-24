@@ -14,7 +14,7 @@ class Index extends React.Component {
     super(props);
     this.filterBooks = this.filterBooks.bind(this);
     this.state= {
-      allBooks: jsonData
+      allBooks: jsonData,
     }
   }
 
@@ -35,10 +35,19 @@ class Index extends React.Component {
     }
   }
 
+  clickPopular = () => {
+    let books = jsonData;
+    let popularBooks = books.filter(book => book.popular);
+
+    this.setState({
+      allBooks: popularBooks
+    });
+  }
+
   render() {
     return(
       <div> 
-      <Layout filterBooks={this.filterBooks} />
+      <Layout filterBooks={this.filterBooks} clickPopular={this.clickPopular}/>
       <div className = "site">
           <Categories />
           <Items books={this.state.allBooks}/>

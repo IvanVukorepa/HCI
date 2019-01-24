@@ -5,7 +5,7 @@ import Menu from "../components/menu.js"
 export default (props) => (
     <div> 
       <Header filterBooks={props.filterBooks}/>
-      <Menu />
+      <Menu clickPopular={props.clickPopular}/>
     </div>
   )   
 
