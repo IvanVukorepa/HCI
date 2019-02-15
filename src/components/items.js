@@ -2,7 +2,7 @@ import React from "react"
 import image from "../images/image.jpg"
 import { Link } from "gatsby"
 
-import '..//style/index.css'
+import '..//style/items.css'
 
 
 class Items extends React.Component {
@@ -26,6 +26,11 @@ class Items extends React.Component {
             });    
     }
 
+    addToCartClick = () => {
+        console.log("4rgwaz5rgeah");
+
+    }
+
     render(){
         return (
             <div className="item_container">
@@ -35,9 +40,9 @@ class Items extends React.Component {
                     <img src={image} alt="not found" height="100" width="100" />
                     <div className="title">{book.title}</div>
                     <div className="author">{book.author}</div>
-                    <div>
-                        <div className="price">{book.price}</div>
-                        <button></button>
+                    <div className="price_container">
+                        <div className="price" onClick={this.addToCartClick}>{book.price}€</div>
+                        <div className="addToCartButton" onClick={this.addToCartClick}>Add To Cart</div>
                     </div>
                 </Link>         
             )

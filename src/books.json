@@ -6,7 +6,8 @@
         "title" : "naslov knjige",
         "price": 110,
         "description": "Lorem tetur ad ipsum tetur ad ipsum dolor sit amet, consectetur ad ipsum dolor sit amet, consectetur ad ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qorem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, ui officia deserunt mollit anim id orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, ",
-        "popular": true
+        "popular": true,
+        "genre": "Biography"
     },
     {
         "id": 2,
@@ -15,7 +16,8 @@
         "title" : "naslov druge knjige",
         "price": 91,
         "description": "Lorem tetur ad ipsum tetur ad ipsum dolor sit amet, consectetur ad ipsum dolor sit amet, consectetur ad ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qorem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, ui officia deserunt mollit anim id orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, ",
-        "popular": false
+        "popular": false,
+        "genre": "Horror"
     },
     {
         "id": 3,
@@ -24,7 +26,8 @@
         "title" : "naslov",
         "price": 94.5,
         "description": "Lorem tetur ad ipsum tetur ad ipsum dolor sit amet, consectetur ad ipsum dolor sit amet, consectetur ad ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qorem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, ui officia deserunt mollit anim id orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, ",
-        "popular": true
+        "popular": true,
+        "genre": "Mystery"
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@
         "title" : "naslov",
         "price": 438.9,
         "description": "Lorem tetur ad ipsum tetur ad ipsum dolor sit amet, consectetur ad ipsum dolor sit amet, consectetur ad ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qorem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, ui officia deserunt mollit anim id orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, ",
-        "popular": false
+        "popular": false,
+        "genre": "Biography"
     },
     {
         "id": 5,
@@ -42,7 +46,8 @@
         "title" : "knjiga broj 5",
         "price": 20,
         "description": "Lorem tetur ad ipsum tetur ad ipsum dolor sit amet, consectetur ad ipsum dolor sit amet, consectetur ad ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qorem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, ui officia deserunt mollit anim id orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, ",
-        "popular": true
+        "popular": true,
+        "genre": "Romance"
     },
     {
         "id": 6,
@@ -51,6 +56,7 @@
         "title" : "The Lord of The Rings",
         "price": 20,
         "description": "Lorem tetur ad ipsum tetur ad ipsum dolor sit amet, consectetur ad ipsum dolor sit amet, consectetur ad ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qorem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, ui officia deserunt mollit anim id orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, orem ipsum dolor sit amet, consectetur adipiscing elit, ",
-        "popular": true
+        "popular": true,
+        "genre": "Science fiction"
     }
 ]
