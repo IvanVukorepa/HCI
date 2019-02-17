@@ -26,9 +26,9 @@ class Items extends React.Component {
             });    
     }
 
-    addToCartClick = () => {
-        console.log("4rgwaz5rgeah");
-
+    addToCartClick = (e, id) => {
+        e.preventDefault();
+        this.props.addToCart(id);
     }
 
     render(){
@@ -38,11 +38,13 @@ class Items extends React.Component {
                return (
                 <Link className="item" to="/details/" key={book.id} state={{props: book}}>
                     <img src={image} alt="not found" height="100" width="100" />
-                    <div className="title">{book.title}</div>
-                    <div className="author">{book.author}</div>
-                    <div className="price_container">
-                        <div className="price" onClick={this.addToCartClick}>{book.price}€</div>
-                        <div className="addToCartButton" onClick={this.addToCartClick}>Add To Cart</div>
+                    <div className="itemBody">
+                        <div className="title">{book.title}</div>
+                        <div className="author">{book.author}</div>
+                        <div className="price_container">
+                            <div className="price" onClick={this.addToCartClick}>{book.price}€</div>
+                            <div className="addToCartButton" onClick={(e) => this.addToCartClick(e, book.id)}>Add To Cart</div>
+                        </div>
                     </div>
                 </Link>         
             )

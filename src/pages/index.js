@@ -14,9 +14,10 @@ class Index extends React.Component {
   constructor(props){
     super(props);
     this.filterBooks = this.filterBooks.bind(this);
-    this.state= {
+    this.state = {
       allBooks: jsonData,
-      allGenres: genres
+      allGenres: genres,
+      Cart: []
     }
   }
 
@@ -59,13 +60,32 @@ class Index extends React.Component {
 
   }
 
+  addToCart = (id) => {
+    let cart = this.state.Cart;
+    let book = jsonData.find(book => book.id === id);
+
+    let index = cart.findIndex((el) => {
+      return el.book.id === id
+    });
+
+    if(index !== -1){
+      cart[index].amount++;
+    }
+    else{
+      cart.push({"book": book, "amount": 1});
+    }
+    this.setState({
+      Cart: cart
+    });
+  }
+
   render() {
     return(
       <div> 
-      <Layout filterBooks={this.filterBooks} clickPopular={this.clickPopular}/>
+      <Layout cart={this.state.Cart} filterBooks={this.filterBooks} clickPopular={this.clickPopular}/>
       <div className = "site">
           <Categories genres={this.state.allGenres} genreClick={this.genreClick}/>
-          <Items books={this.state.allBooks}/>
+          <Items books={this.state.allBooks} addToCart={this.addToCart}/>
       </div>
     </div>
     );
