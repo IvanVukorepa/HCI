@@ -10,6 +10,39 @@ import "../style/cssReset.css"
 var jsonData = require('../books.json');
 var genres = require('../genres.json');
 
+function FilterOptions(props){
+  if(props.component.state.filter === filterEnum.noFilter)
+    return <Categories genres={props.component.state.allGenres} genreClick={props.component.genreClick}/>
+  
+  return null;
+}
+
+function FilteredBy(props){
+  if(props.component.state.filter !== filterEnum.noFilter){
+    switch(props.component.state.filter){
+      case filterEnum.popular:
+        return <div className="filterOptions">Popular <div className="x" onClick={props.component.removeFilter}>x</div></div>;
+      case filterEnum.new:
+        return <div className="filterOptions">New <div className="x" onClick={props.component.removeFilter}>x</div></div>;
+      case filterEnum.special:
+        return <div className="filterOptions">Special <div className="x" onClick={props.component.removeFilter}>x</div></div>;
+      case filterEnum.genre:
+        return <div className="filterOptions">{props.component.state.genreFilter} <div className="x" onClick={props.component.removeFilter}>x</div></div>;
+      default: 
+      
+    }
+  }
+  return null;
+}
+
+var filterEnum = {
+  noFilter: 0,
+  popular: 1,
+  new: 2,
+  special: 3,
+  genre: 4
+}
+
 class Index extends React.Component {
   constructor(props){
     super(props);
@@ -18,7 +51,9 @@ class Index extends React.Component {
       allBooks: jsonData,
       allGenres: genres,
       Cart: [],
-      username: String
+      username: String,
+      filter: filterEnum.noFilter,
+      genreFilter: String
     }
   }
 
@@ -54,7 +89,15 @@ class Index extends React.Component {
     let popularBooks = books.filter(book => book.popular);
 
     this.setState({
-      allBooks: popularBooks
+      allBooks: popularBooks,
+      filter: filterEnum.popular
+    });
+  }
+
+  removeFilter = () => {
+    this.setState({
+      allBooks: jsonData,
+      filter: filterEnum.noFilter
     });
   }
 
@@ -66,7 +109,9 @@ class Index extends React.Component {
     });
 
     this.setState({
-      allBooks: filteredBooks
+      allBooks: filteredBooks,
+      filter: filterEnum.genre,
+      genreFilter: genreName
     })
 
   }
@@ -97,8 +142,11 @@ class Index extends React.Component {
       <div> 
       <Layout cart={this.state.Cart} username={this.state.username} filterBooks={this.filterBooks} clickPopular={this.clickPopular}/>
       <div className = "site">
-          <Categories genres={this.state.allGenres} genreClick={this.genreClick}/>
-          <Items books={this.state.allBooks} addToCart={this.addToCart} cart={this.state.Cart} username={this.state.username}/>
+          <FilterOptions component={this} />
+          <div>
+            <FilteredBy component={this}/>
+            <Items books={this.state.allBooks} addToCart={this.addToCart} cart={this.state.Cart} username={this.state.username}/>
+          </div>
       </div>
     </div>
     );

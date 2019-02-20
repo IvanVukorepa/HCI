@@ -19,6 +19,11 @@
     margin: auto;
     cursor: pointer;
 }
+
+.header_item:hover{
+    color: blue;
+}
+
 .mobile{
     display: none;
 }
@@ -67,6 +72,26 @@
 a {
     text-decoration: none;
 }
+
+.filterOptions{
+    font-size: 32px;
+    margin: 10px auto auto 30px;
+    padding: 10px;
+    background-color: rgb(220, 233, 233);
+    border-radius: 40px;
+    display: inline-block;
+}
+
+.x{
+    font-size: 26px;
+    display: inline;
+    margin-left: 10px;
+}
+.x:hover{
+    font-size: 32px;
+}
+
+
 @media screen and (max-width: 850px){
     .search{
         order: 1;

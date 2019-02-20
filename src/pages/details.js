@@ -30,13 +30,7 @@ class Details extends Component {
         cart: props.cart === undefined ? [] : props.cart,
         username: props.username
       });
-
-      console.log(props);
     }
-  }
-
-  componentDidUpdate(){
-    console.log(this.state.cart);
   }
 
   addToCartClick = (id) => {
