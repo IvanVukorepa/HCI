@@ -2,20 +2,16 @@ import React from "react"
 import { Link } from "gatsby"
 
 
+function User(props){
+        if(typeof props.username === "string"){
+                return <div className="header_item">{props.username}</div>
+        }
+        else{
+                return <Link to="/signIn" className="header_item">Sign in</Link>
+        }
+}
+
 class Header extends React.Component {
-        constructor(props){
-                super(props);
-                this.state = {
-                        cart: [],
-                };
-        }
-
-        componentDidMount(){
-                this.setState({
-                        cart: this.props.cart,
-                });
-        }
-
         search = (e) => {
                 let filterString = e.target.value;
                 this.props.filterBooks(filterString);
@@ -24,12 +20,10 @@ class Header extends React.Component {
         render() {
                 return (
                 <div className="header">
-                        <Link to="/" className="header_item">Book shop</Link>
+                        <Link state={{props: {name: this.props.username, cart: this.props.cart}}} to="/" className="header_item">Book shop</Link>
                         <input className="search input" placeholder="Search" onChange={e => this.search(e)} />
-                        <h3 className="header_item">Sign in</h3>
-                        <Link to="/cart" className="header_item" state={{props:
-                                this.props.cart
-                        }}>Cart</Link>
+                        <User username={this.props.username}></User>
+                        <Link to="/cart" className="header_item" state={{props: {cart: this.props.cart, username: this.props.username}}}>Cart</Link>
                 </div>  
                 );
         }

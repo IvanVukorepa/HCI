@@ -20,7 +20,7 @@ class Layout extends React.Component {
   render(){
     return (
       <div> 
-        <Header filterBooks={this.props.filterBooks} cart={this.props.cart}/>
+        <Header username={this.props.username} filterBooks={this.props.filterBooks} cart={this.props.cart}/>
         <Menu clickPopular={this.props.clickPopular}/>
       </div>
     );

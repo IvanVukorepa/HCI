@@ -1,0 +1,131 @@
+.signInForm{
+    background-color: rgb(245,245,245);
+    min-height: 100vh;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.signInTitle{
+    font-size: 36px;
+    color: black;
+}
+
+.singnInBody{
+    background-color: white;
+    margin: auto;
+    width: 50%;
+    border: 1px solid gray;
+    padding: 10px;
+    text-align: initial;
+    margin-top: 40px;
+}
+
+.signInBodyTitle{
+    font-size: 32px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    text-align: center;
+
+}
+
+.signInBodyContent{
+    width: 60%;
+    margin: auto;
+}
+
+.signInBodyEmail{
+    width: 100%;
+    margin-bottom: 30px; 
+}
+
+.signInBodyEmailTitle{
+    font-size: 26px;
+}
+
+.signInBodyEmailValue{
+    width: 100%;
+    margin-top: 5px; 
+    line-height: 30px;
+
+}
+
+.signInBodyPassphrase{
+    margin-bottom: 30px;
+}
+
+.signInBodyPassphraseTitle{
+    font-size: 26px;
+}
+
+.signInBodyPassphraseValue{
+    width: 100%;
+    margin-top: 5px;
+    line-height: 30px;
+}
+
+.signInButton {
+    margin: 50px auto;
+    display: block;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 50%;
+    height: 3em;
+    background: rgb(255, 255, 0);
+    line-height: 3;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.signInButton:hover {
+    background: rgb(230,230,0);
+    cursor: pointer;
+}
+
+.registerLabel{
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.RegisterButton {
+    margin: 0 auto 20px auto;
+    display: block;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 50%;
+    height: 3em;
+    background: rgb(200, 200, 0);
+    line-height: 3;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.RegisterButton:hover {
+    background: rgb(230,230,0);
+    cursor: pointer;
+}
+
+.signInBodyName{
+    width: 100%;
+    margin-bottom: 30px; 
+}
+
+.signInBodyNameTitle{
+    font-size: 26px;
+}
+
+.signInBodyNameValue{
+    width: 100%;
+    margin-top: 5px; 
+    line-height: 30px;
+
+}
+
+.invalidEmail{
+    color: red;
+}

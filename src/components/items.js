@@ -36,10 +36,10 @@ class Items extends React.Component {
             <div className="item_container">
             {this.state.books.map(book => {
                return (
-                <Link className="item" to="/details/" key={book.id} state={{props: book}}>
+                <Link className="item" to="/details/" key={book.id} state={{props: {book: book, cart: this.props.cart, username: this.props.username}}}>
                     <img src={image} alt="not found" height="100" width="100" />
                     <div className="itemBody">
-                        <div className="title">{book.title}</div>
+                        <div className="title">{book.title.length < 10 ? book.title : book.title.substring(0,12) + "..."}</div>
                         <div className="author">{book.author}</div>
                         <div className="price_container">
                             <div className="price" onClick={this.addToCartClick}>{book.price}€</div>

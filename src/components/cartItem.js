@@ -1,13 +1,7 @@
 import React from "react"
 import image from "../images/image.jpg"
-import { runInThisContext } from "vm";
-
 
 class CartItem extends React.Component{
-    constructor(props){
-        super(props);
-    }
-
     removeFromCart = (e, id) => {
         this.props.removeFromCart(id);
     }

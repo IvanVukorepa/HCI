@@ -1,6 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-
 
 class Category extends React.Component {
     constructor(props){

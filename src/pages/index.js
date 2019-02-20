@@ -17,7 +17,18 @@ class Index extends React.Component {
     this.state = {
       allBooks: jsonData,
       allGenres: genres,
-      Cart: []
+      Cart: [],
+      username: String
+    }
+  }
+
+  componentDidMount(){
+    if(this.props.location.state !== null && this.props.location.state.props !== undefined){
+      let props = this.props.location.state.props;
+      this.setState({
+        username: props.name,
+        Cart: props.cart === undefined ? [] : props.cart
+      });
     }
   }
 
@@ -64,6 +75,8 @@ class Index extends React.Component {
     let cart = this.state.Cart;
     let book = jsonData.find(book => book.id === id);
 
+    console.log(this.state);
+
     let index = cart.findIndex((el) => {
       return el.book.id === id
     });
@@ -82,10 +95,10 @@ class Index extends React.Component {
   render() {
     return(
       <div> 
-      <Layout cart={this.state.Cart} filterBooks={this.filterBooks} clickPopular={this.clickPopular}/>
+      <Layout cart={this.state.Cart} username={this.state.username} filterBooks={this.filterBooks} clickPopular={this.clickPopular}/>
       <div className = "site">
           <Categories genres={this.state.allGenres} genreClick={this.genreClick}/>
-          <Items books={this.state.allBooks} addToCart={this.addToCart}/>
+          <Items books={this.state.allBooks} addToCart={this.addToCart} cart={this.state.Cart} username={this.state.username}/>
       </div>
     </div>
     );

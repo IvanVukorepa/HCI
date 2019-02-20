@@ -8,13 +8,15 @@ class Cart extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            cart: []
+            cart: [],
+            username: String
         }
     }
     componentDidMount(){
         let props = this.props.location.state.props;
         this.setState({
-            cart: props
+            cart: props.cart,
+            username: props.username
         });
     }
 
@@ -50,7 +52,7 @@ class Cart extends React.Component{
     render(){
         return(
             <div className="cart">
-                <Layout/>
+                <Layout cart={this.state.cart} username={this.state.username}/>
                 <div>Your cart:</div>
                 <div className="cartContainer"> 
                     <div> 

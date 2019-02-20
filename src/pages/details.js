@@ -12,25 +12,56 @@ class Details extends Component {
       title: null,
       author: null,
       price: null,
-      description: null
+      description: null,
+      cart: []
     }
 
   }
 
   componentDidMount() {
-    let props = this.props.location.state.props;
+    if(this.props.location.state != null){
+      let props = this.props.location.state.props;
+      this.setState({
+        id: props.book.id,
+        title: props.book.title,
+        author: props.book.author,
+        price: props.book.price,
+        description: props.book.description,
+        cart: props.cart === undefined ? [] : props.cart,
+        username: props.username
+      });
+
+      console.log(props);
+    }
+  }
+
+  componentDidUpdate(){
+    console.log(this.state.cart);
+  }
+
+  addToCartClick = (id) => {
+    let cart = this.state.cart;
+
+    let index = cart.findIndex((el) => {
+      return el.book.id === id
+    });
+
+    if(index !== -1){
+      cart[index].amount++;
+    }
+    else{
+      cart.push({"book": this.props.location.state.props.book, "amount": 1});
+    }
+
     this.setState({
-      title: props.title,
-      author: props.author,
-      price: props.price,
-      description: props.description
+      cart: cart
     });
   }
 
   render() {
     return (
     <div className="detailsSite"> 
-      <Layout />
+      <Layout cart={this.state.cart} username={this.state.username}/>
       <div className="details">
         <div className="imageDetails">
           <div className="detailsImage"><img src={image} alt="wef" className="imageImg"></img></div>
@@ -42,7 +73,7 @@ class Details extends Component {
         </div>
         <div className="detailsCheckout">
           <div className="detailsCheckoutPrice">Price: {this.state.price}€</div>
-          <div className="detailsCheckoutButton">Add to cart</div>
+          <div className="detailsCheckoutButton" onClick={(e) => this.addToCartClick(this.state.id)}>Add to cart</div>
         </div>
       </div>
     </div>
