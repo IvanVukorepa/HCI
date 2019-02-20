@@ -9,6 +9,11 @@ export default (props) => (
     </div>
   )   
 */
+function renderMenu(render, component){
+  if(render)
+    return <Menu clickPopular={component.props.clickPopular}/>
+  return null;
+}
   
 class Layout extends React.Component {
 /*
@@ -21,7 +26,7 @@ class Layout extends React.Component {
     return (
       <div> 
         <Header username={this.props.username} filterBooks={this.props.filterBooks} cart={this.props.cart}/>
-        <Menu clickPopular={this.props.clickPopular}/>
+        {renderMenu(this.props.renderMenu === false ? false : true, this)}
       </div>
     );
   }
