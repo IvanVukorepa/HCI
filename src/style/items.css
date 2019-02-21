@@ -59,6 +59,11 @@ img{
     margin: auto 0 auto auto;
 }
 
+.addToCartButton:hover{
+    background: rgb(230,230,0);
+
+}
+
 .price{
     height: 33%;
     font-size: 26px;

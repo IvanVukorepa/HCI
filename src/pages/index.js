@@ -40,7 +40,8 @@ var filterEnum = {
   popular: 1,
   new: 2,
   special: 3,
-  genre: 4
+  genre: 4,
+  string: 5
 }
 
 class Index extends React.Component {
@@ -74,12 +75,14 @@ class Index extends React.Component {
         return el.title.toLowerCase().includes(filterString.toLowerCase()) === true;
       });
       this.setState({
-        allBooks: filteredBooks
+        allBooks: filteredBooks,
+        filter: filterEnum.string
       });
     }
     else{
       this.setState({
-        allBooks: allBooks
+        allBooks: allBooks,
+        filter:filterEnum.noFilter
       });
     }
   }
@@ -119,8 +122,6 @@ class Index extends React.Component {
   addToCart = (id) => {
     let cart = this.state.Cart;
     let book = jsonData.find(book => book.id === id);
-
-    console.log(this.state);
 
     let index = cart.findIndex((el) => {
       return el.book.id === id

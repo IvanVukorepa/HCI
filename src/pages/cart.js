@@ -13,11 +13,14 @@ class Cart extends React.Component{
         }
     }
     componentDidMount(){
-        let props = this.props.location.state.props;
-        this.setState({
-            cart: props.cart,
-            username: props.username
-        });
+        try{
+            let props = this.props.location.state.props;
+            this.setState({
+                cart: props.cart===undefined ? [] : props.cart,
+                username: props.username
+            });
+        }
+        catch{}
     }
 
     totalPrice = () => {
@@ -49,19 +52,26 @@ class Cart extends React.Component{
         });
     }
 
+    checkoutClick = () => {
+        this.setState({
+            cart: []
+        });
+    }
+
     render(){
         return(
             <div className="cart">
                 <Layout cart={this.state.cart} username={this.state.username}/>
-                <div>Your cart:</div>
+                <div className="cartTitle">Your cart:</div>
                 <div className="cartContainer"> 
                     <div> 
                         {this.state.cart.map(item => {
                             return <CartItem key={item.book.id} removeFromCart={this.removeFromCart} item={item}/>
                         })}  
                     </div>
-                    <div>
-                        Total: {this.totalPrice()}€
+                    <div className="totalPriceContainer">
+                        <div className="totalPrice">Total: {this.totalPrice()}€</div>
+                        <div className="totalPriceButton" onClick={this.checkoutClick}>Checkout</div>
                     </div> 
                 </div>         
             </div>

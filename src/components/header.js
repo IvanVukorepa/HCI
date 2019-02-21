@@ -22,8 +22,9 @@ class Header extends React.Component {
                 <div className="header">
                         <Link state={{props: {name: this.props.username, cart: this.props.cart}}} to="/" className="header_item">Book shop</Link>
                         <input className="search input" placeholder="Search" onChange={e => this.search(e)} />
-                        <User username={this.props.username}></User>
+                        <Link to="/blog" className="header_item" state={{props: {cart: this.props.cart, username: this.props.username}}}>Blog</Link>
                         <Link to="/cart" className="header_item" state={{props: {cart: this.props.cart, username: this.props.username}}}>Cart</Link>
+                        <User username={this.props.username}></User>
                 </div>  
                 );
         }

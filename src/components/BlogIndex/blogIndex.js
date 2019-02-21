@@ -1,15 +1,32 @@
 import React from "react";
 import { Link } from "gatsby";
-import styles from "./styles.module.css";
+//import styles from "./styles.module.css";
 
 
 class BlogIndex extends React.Component{
   /*const postsList = posts.map(post => {
     const { id, excerpt } = post.node;
     const { title, date, slug } = post.node.frontmatter;*/
-    constructor(props){
+   /* constructor(props){
       super(props);
       this.state = {postList: props.posts.map(post => {
+        const { id, excerpt } = post.node;
+        const { title, date, slug } = post.node.frontmatter;
+        return (
+          <section key={id} /*className={styles.Post}>
+            <h2 /*className={styles.Title}>
+              <Link to={`blog/${slug}`}>{title}</Link>
+            </h2>
+            <p /*className={styles.Excerpt}>{excerpt}</p>
+            <span /*className={styles.Date}>{date}</span>
+          </section>
+        )}
+      )}
+    }*/
+
+    render(){
+    return (
+      this.props.posts.map(post => {
         const { id, excerpt } = post.node;
         const { title, date, slug } = post.node.frontmatter;
         return (
@@ -19,23 +36,6 @@ class BlogIndex extends React.Component{
             </h2>
             <p /*className={styles.Excerpt}*/>{excerpt}</p>
             <span /*className={styles.Date}*/>{date}</span>
-          </section>
-        )}
-      )}
-    }
-
-    render(){
-    return (
-      this.props.posts.map(post => {
-        const { id, excerpt } = post.node;
-        const { title, date, slug } = post.node.frontmatter;
-        return (
-          <section key={id} className={styles.Post}>
-            <h2 className={styles.Title}>
-              <Link to={`blog/${slug}`}>{title}</Link>
-            </h2>
-            <p className={styles.Excerpt}>{excerpt}</p>
-            <span className={styles.Date}>{date}</span>
           </section>
         )}
       )

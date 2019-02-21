@@ -4,7 +4,13 @@ import React from "react"
 class Menu extends React.Component {
     
     clickPopular = () => {
-        this.props.clickPopular();
+        try{
+            this.props.clickPopular();
+        }
+        catch{
+            
+        }
+        
     }
 
     render() {

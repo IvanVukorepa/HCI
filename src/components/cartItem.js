@@ -19,6 +19,10 @@ class CartItem extends React.Component{
                             this.removeFromCart(e, this.props.item.book.id)}}>Remove</div>
                     </div>
                 </div>
+                <div className="amount">
+                    <div>Amount</div>
+                    <input className="amountCounter" type="number" defaultValue={this.props.item.amount} min="1"/>
+                </div>
             </div>
         );
     };

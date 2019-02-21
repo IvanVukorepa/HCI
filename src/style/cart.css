@@ -7,6 +7,11 @@
     display: flex;
 }
 
+.cartTitle{
+    font-size: 28px;
+    margin: 20px 50px;
+}
+
 .cartItemContainer{
     background-color:rgb(220, 233, 233);
     margin: 30px 50px;
@@ -20,16 +25,16 @@
 
 .cartItemTitle{
     text-transform: uppercase;
-    margin: 5px 100px;
+    margin: 5px 75px;
     font-size: 32px;
 }
 
 .cartItemAuthor{
-    margin: 50px 100px;
+    margin: 50px 75px;
 }
 
 .cartItemPriceContainer{
-    margin: 5px 100px;
+    margin: 5px 75px;
     display: flex;
 }
 
@@ -39,19 +44,76 @@
 
 .cartItemRemove{
     margin-left: 40px;
-        border-style: solid;
-        border-color: black;
-        border-width: 1px;
-        width: 6em;
-        height: 2em;
-        background: rgb(255, 255, 0);
-        line-height: 2;
-        text-align: center;
-        text-decoration: none;
-        font-weight: bold;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 6em;
+    height: 2em;
+    background: rgb(200, 200, 0);
+    line-height: 2;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .cartItemRemove:hover {
     background: rgb(230,230,0);
     cursor: pointer;
+}
+
+.totalPriceContainer{
+    margin: 30px 30px auto auto;
+}
+
+.totalPrice{
+    font-size: 32px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+
+.totalPriceButton{
+    margin-left: 40px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 9em;
+    height: 3em;
+    background: rgb(255, 255, 0);
+    line-height: 3;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.totalPriceButton:hover {
+    background: rgb(230,230,0);
+    cursor: pointer;
+}
+.amount{
+    margin-top: 75px;
+    margin-right: 15px;
+    font-size: 22px;
+}
+
+.amountCounter{
+    margin-top: 10px;
+    width: 50px;
+    height: 25px;
+}
+
+
+@media screen and (max-width: 1000px){
+    .cartContainer{
+        display: block;
+    }
+    .totalPriceContainer{
+        width: 1000px;
+        margin: 0 auto 0 auto;
+    }
+}
+@media screen and (max-width: 500px){
+    .cartItemContainer{
+        display: block;
+    }
 }

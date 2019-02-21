@@ -37,10 +37,6 @@ class Register extends React.Component {
         }
     }
 
-    componentDidUpdate(){
-        console.log(this.state.account);
-    }
-
     registerClick = (e) => {
         if(this.state.name === "" || this.state.passphrase.length < 6 || this.state.passphrase !== this.state.passphrase2 || !this.state.email.includes("@")){
             e.preventDefault();
