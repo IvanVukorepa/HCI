@@ -80,3 +80,7 @@
     cursor: pointer;
 }
 
+.detailsCheckoutButton:active {
+    border-color: red;
+}
+

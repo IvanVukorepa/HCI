@@ -55,7 +55,7 @@ class Details extends Component {
   render() {
     return (
     <div className="detailsSite"> 
-      <Layout cart={this.state.cart} username={this.state.username}/>
+      <Layout cart={this.state.cart} username={this.state.username} renderMenu={false}/>
       <div className="details">
         <div className="imageDetails">
           <div className="detailsImage"><img src={image} alt="wef" className="imageImg"></img></div>

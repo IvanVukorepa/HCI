@@ -3,6 +3,8 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import BlogIndex from "../components/BlogIndex/blogIndex"
 
+import '../style/blog.css'
+
 class Blog extends React.Component{
   constructor(props){
     super(props);
@@ -14,7 +16,7 @@ class Blog extends React.Component{
 
   componentDidMount(){
     try{
-      let props = this.props.location.state;
+      let props = this.props.location.state.props;
       this.setState({
         cart: props.cart,
         username: props.username
@@ -24,11 +26,15 @@ class Blog extends React.Component{
 
   render(){
     return (
-      <>
+      <div className="blog">
       <Layout cart={this.state.cart} username={this.state.username} renderMenu={false}/>
-        <h1>Blog posts</h1>
-        <BlogIndex posts={this.props.data.allMarkdownRemark.edges} />
-      </>
+      <div className="blogContent">
+        <h1 className="blogsTitle">News</h1>
+        <div className="posts">
+          <BlogIndex posts={this.props.data.allMarkdownRemark.edges} />
+        </div>
+      </div>
+      </div>
     );
   }
 }

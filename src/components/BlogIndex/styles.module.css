@@ -1,9 +1,10 @@
 .Post {
-  padding-top: 2.5rem;
+  background-color:rgb(220, 233, 233);
+  color: black;
 }
 
 .Excerpt {
-  padding: 0.5rem 0;
+  background-color: black;
 }
 
 .Date {

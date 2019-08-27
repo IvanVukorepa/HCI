@@ -29,7 +29,7 @@ class Items extends React.Component {
     addToCartClick = (e, id) => {
         e.preventDefault();
         this.props.addToCart(id);
-        alert("Product added to cart");
+        //alert("Product added to cart");
     }
 
     render(){

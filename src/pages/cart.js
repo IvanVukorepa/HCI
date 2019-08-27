@@ -58,15 +58,29 @@ class Cart extends React.Component{
         });
     }
 
+    amountChange = (id, amount) => {
+        let cart = this.state.cart;
+
+        for (let el of cart){
+            if(el.book.id === id){
+                el.amount = amount;
+                break;
+            }
+        };
+        this.setState({
+            Cart: cart
+        });
+    }
+
     render(){
         return(
             <div className="cart">
-                <Layout cart={this.state.cart} username={this.state.username}/>
+                <Layout cart={this.state.cart} username={this.state.username} renderMenu={false}/>
                 <div className="cartTitle">Your cart:</div>
                 <div className="cartContainer"> 
                     <div> 
                         {this.state.cart.map(item => {
-                            return <CartItem key={item.book.id} removeFromCart={this.removeFromCart} item={item}/>
+                            return <CartItem key={item.book.id} removeFromCart={this.removeFromCart} item={item} amountChange={this.amountChange} />
                         })}  
                     </div>
                     <div className="totalPriceContainer">

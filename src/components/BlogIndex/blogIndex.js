@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-//import styles from "./styles.module.css";
+import '../../style/blog.css'
 
 
 class BlogIndex extends React.Component{
@@ -30,13 +30,15 @@ class BlogIndex extends React.Component{
         const { id, excerpt } = post.node;
         const { title, date, slug } = post.node.frontmatter;
         return (
-          <section key={id} /*className={styles.Post}*/>
-            <h2 /*className={styles.Title}*/>
-              <Link to={`blog/${slug}`}>{title}</Link>
+          <Link to={`blog/${slug}`} key={id} className="Post">
+          <div className="blogPost">
+            <h2 className="blogPostTitle">
+              <p>{title}</p>
             </h2>
-            <p /*className={styles.Excerpt}*/>{excerpt}</p>
-            <span /*className={styles.Date}*/>{date}</span>
-          </section>
+            <p className="Excerpt">{excerpt}</p>
+            <p className="Date">{date}</p>
+          </div>
+          </Link>
         )}
       )
     )};

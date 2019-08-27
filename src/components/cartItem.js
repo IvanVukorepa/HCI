@@ -6,6 +6,10 @@ class CartItem extends React.Component{
         this.props.removeFromCart(id);
     }
 
+    amountChange = (e, id) => {
+        this.props.amountChange(id, e.target.value);
+    }
+
     render(){
         return (
             <div className="cartItemContainer">
@@ -21,7 +25,7 @@ class CartItem extends React.Component{
                 </div>
                 <div className="amount">
                     <div>Amount</div>
-                    <input className="amountCounter" type="number" defaultValue={this.props.item.amount} min="1"/>
+                    <input className="amountCounter" type="number" defaultValue={this.props.item.amount} min="1" onChange={(e) => this.amountChange(e, this.props.item.book.id)}/>
                 </div>
             </div>
         );

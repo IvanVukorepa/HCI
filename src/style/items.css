@@ -14,6 +14,10 @@
     position: relative;
     color: black;
     display: flex;
+    transition: transform 0.5s;
+}
+.item:hover {
+    transform: scale(1.05);
 }
 img{
     height: 100%;
@@ -61,7 +65,10 @@ img{
 
 .addToCartButton:hover{
     background: rgb(230,230,0);
+}
 
+.addToCartButton:active{
+    border-color: red;
 }
 
 .price{

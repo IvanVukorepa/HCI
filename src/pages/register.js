@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Layout from "../components/layout.js"
 
 import '../style/signIn.css'
 
@@ -33,9 +34,21 @@ class Register extends React.Component {
             email: String,
             passphrase: String,
             passphrase2: String,
-            account: {name: String,email: String, passphrase: String, passphrase2: String}
+            account: {name: String,email: String, passphrase: String, passphrase2: String},
+            Cart: [],
+            username: String
         }
     }
+
+    componentDidMount(){
+        if(this.props.location.state !== null && this.props.location.state.props !== undefined){
+          let props = this.props.location.state.props;
+          this.setState({
+            username: props.name,
+            Cart: props.cart === undefined ? [] : props.cart
+          });
+        }
+      }
 
     registerClick = (e) => {
         if(this.state.name === "" || this.state.passphrase.length < 6 || this.state.passphrase !== this.state.passphrase2 || !this.state.email.includes("@")){
@@ -46,31 +59,34 @@ class Register extends React.Component {
 
     render(){
         return(
-            <div className="signInForm">
-                <Link to="/" className="signInTitle">Book shop</Link>
-                <div className="singnInBody">
-                    <div className="signInBodyTitle">Register</div>
-                    <div className="signInBodyContent">
-                        <div className="signInBodyName">
-                            <div className="signInBodyNameTitle">Name</div>
-                            <input className="signInBodyNameValue" onChange={(e) => { this.setState({name: e.target.value }); }}/>
+            <div>
+                <Layout cart={this.state.Cart} username={this.state.username} renderMenu={false}/>
+                <div className="signInForm">
+                    <Link to="/" className="signInTitle">Book shop</Link>
+                    <div className="singnInBody">
+                        <div className="signInBodyTitle">Register</div>
+                        <div className="signInBodyContent">
+                            <div className="signInBodyName">
+                                <div className="signInBodyNameTitle">Name</div>
+                                <input className="signInBodyNameValue" onChange={(e) => { this.setState({name: e.target.value }); }}/>
+                            </div>
+                            <div className="signInBodyEmail">
+                                <div className="signInBodyEmailTitle">Email</div>
+                                <EmailValidation email={this.state.email}/>
+                                <input className="signInBodyEmailValue" onChange={(e) => { this.setState({email: e.target.value }); }}/>
+                            </div>
+                            <div className="signInBodyPassphrase">
+                                <div className="signInBodyPassphraseTitle">Passphrase</div>
+                                <PassphraseValidation passphrase={this.state.passphrase}/>
+                                <input className="signInBodyPassphraseValue" onChange={(e) => { this.setState({passphrase: e.target.value }); }}/>
+                            </div>
+                            <div className="signInBodyPassphrase">
+                                <div className="signInBodyPassphraseTitle">Re-enter passphrase</div>
+                                <Passphrase2Validation passphrase={this.state.passphrase} passphrase2={this.state.passphrase2}/>
+                                <input className="signInBodyPassphraseValue" onChange={(e) => { this.setState({passphrase2: e.target.value }); }}/>
+                            </div>
+                            <Link to="/" state={{props: {name: this.state.name, email: this.state.email, passphrase: this.state.passphrase}}} className="signInButton" onClick={(e) => this.registerClick(e)}>Register</Link>
                         </div>
-                        <div className="signInBodyEmail">
-                            <div className="signInBodyEmailTitle">Email</div>
-                            <EmailValidation email={this.state.email}/>
-                            <input className="signInBodyEmailValue" onChange={(e) => { this.setState({email: e.target.value }); }}/>
-                        </div>
-                        <div className="signInBodyPassphrase">
-                            <div className="signInBodyPassphraseTitle">Passphrase</div>
-                            <PassphraseValidation passphrase={this.state.passphrase}/>
-                            <input className="signInBodyPassphraseValue" onChange={(e) => { this.setState({passphrase: e.target.value }); }}/>
-                        </div>
-                        <div className="signInBodyPassphrase">
-                            <div className="signInBodyPassphraseTitle">Re-enter passphrase</div>
-                            <Passphrase2Validation passphrase={this.state.passphrase} passphrase2={this.state.passphrase2}/>
-                            <input className="signInBodyPassphraseValue" onChange={(e) => { this.setState({passphrase2: e.target.value }); }}/>
-                        </div>
-                        <Link to="/" state={{props: {name: this.state.name, email: this.state.email, passphrase: this.state.passphrase}}} className="signInButton" onClick={(e) => this.registerClick(e)}>Register</Link>
                     </div>
                 </div>
             </div>

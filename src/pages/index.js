@@ -3,8 +3,8 @@ import Categories from "../components/categories.js"
 import Items from "../components/items.js"
 import Layout from "../components/layout.js"
 
-import "../style/index.css"
 import "../style/cssReset.css"
+import "../style/index.css"
 
 
 var jsonData = require('../books.json');
