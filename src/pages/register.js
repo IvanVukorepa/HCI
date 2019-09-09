@@ -55,6 +55,7 @@ class Register extends React.Component {
             e.preventDefault();
             alert("You did not enter the needed information");
         }
+        localStorage.setItem("user", this.state.name);
     }
 
     render(){
@@ -78,12 +79,12 @@ class Register extends React.Component {
                             <div className="signInBodyPassphrase">
                                 <div className="signInBodyPassphraseTitle">Passphrase</div>
                                 <PassphraseValidation passphrase={this.state.passphrase}/>
-                                <input className="signInBodyPassphraseValue" onChange={(e) => { this.setState({passphrase: e.target.value }); }}/>
+                                <input type="password" className="signInBodyPassphraseValue" onChange={(e) => { this.setState({passphrase: e.target.value }); }}/>
                             </div>
                             <div className="signInBodyPassphrase">
                                 <div className="signInBodyPassphraseTitle">Re-enter passphrase</div>
                                 <Passphrase2Validation passphrase={this.state.passphrase} passphrase2={this.state.passphrase2}/>
-                                <input className="signInBodyPassphraseValue" onChange={(e) => { this.setState({passphrase2: e.target.value }); }}/>
+                                <input type="password" className="signInBodyPassphraseValue" onChange={(e) => { this.setState({passphrase2: e.target.value }); }}/>
                             </div>
                             <Link to="/" state={{props: {name: this.state.name, email: this.state.email, passphrase: this.state.passphrase}}} className="signInButton" onClick={(e) => this.registerClick(e)}>Register</Link>
                         </div>

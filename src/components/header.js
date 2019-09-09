@@ -1,11 +1,23 @@
 import React from "react"
 import { Link } from "gatsby"
 
+function logOut(){
+        localStorage.removeItem("user");
+}
 
 function User(props){
-        if(typeof props.username === "string" && props.username !== ""){
+        /*if(typeof props.username === "string" && props.username !== ""){
                 return <div className="header_item">{props.username}</div>
-        }
+        }*/
+        var username = localStorage.getItem("user");
+        if(username !== null){
+                return (
+                        <div className="header_item">
+                                <div className="header_item">{username}</div>
+                                <Link to='/' className="header_item_minor" onClick={logOut}>Log out</Link>
+                        </div>
+                )
+        } 
         else{
                 return <Link to="/signIn" className="header_item" state={{props: {cart: props.this.props.cart}}}>Sign in</Link>
         }

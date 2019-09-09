@@ -3,13 +3,13 @@ import { Link } from "gatsby"
 import Layout from "../components/layout.js"
 
 import '../style/signIn.css'
-
+/*
 function Validation(props){
     if(props.valid)
         return null;
     return <div className="invalidEmail">Email not valid</div>
 }
-
+*/
 class SignIn extends React.Component {
     constructor(props){
         super(props);
@@ -30,17 +30,15 @@ class SignIn extends React.Component {
         }
       }
 
-    emailChange = (e) => {
-        if(!e.target.value.includes("@")){
+    userNameChange = (e) => {
+        if(e.target.value !== null)
             this.setState({
-                valid: false
-            })
-        }
-        else{
-            this.setState({
-                valid: true
-            })
-        }
+                username: e.target.value
+            });
+    }
+
+    signIn = () => {
+        localStorage.setItem("user", this.state.username);
     }
 
     render(){
@@ -53,15 +51,14 @@ class SignIn extends React.Component {
                         <div className="signInBodyTitle">Sign in</div>
                         <div className="signInBodyContent">
                             <div className="signInBodyEmail">
-                                <div className="signInBodyEmailTitle">Email</div>
-                                <Validation valid={this.state.valid} />
-                                <input className="signInBodyEmailValue" onChange={(e) => this.emailChange(e)}/>
+                                <div className="signInBodyEmailTitle">userName</div>
+                                <input className="signInBodyEmailValue" onChange={(e) => this.userNameChange(e)}/>
                             </div>
                             <div className="signInBodyPassphrase">
                                 <div className="signInBodyPassphraseTitle">Passphrase</div>
-                                <input className="signInBodyPassphraseValue"/>
+                                <input type="password"className="signInBodyPassphraseValue"/>
                             </div>
-                            <div className="signInButton">Sign in</div>
+                            <Link to="/" state={{props: {cart: this.state.Cart}}} onClick={this.signIn} className="signInButton">Sign in</Link>
                             <div>
                                 <div className="registerLabel">don't have an account?</div>
                                 <Link to="/register" className="RegisterButton" state={{props: {cart: this.state.Cart}}}>Click here to register</Link>
